@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function aa() {
+	var d = new Date();
+	document.getElementById("currenttime").innerHTML = d;
+	window.setTimeout("aa()", 1000);
+}
+</script>
+</head>
+<body onload="javascript:aa();">
+<div id="currenttime">
+</div>
+</body>
+</html>

@@ -1,0 +1,8 @@
+package com.kitri.aop.service;
+
+import com.kitri.aop.model.MemberDto;
+
+public interface MemberService {
+	int registerMember(MemberDto memberDto);
+	MemberDto getMember(String id);
+}

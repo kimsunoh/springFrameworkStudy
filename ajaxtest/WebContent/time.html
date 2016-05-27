@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+var httpRequest;
+
+function getXMLHttpRequest() {
+	if(window.ActiveXObject) {//IE라면
+		try {
+			//alert("IE 최신버전이네요..")
+			return new ActiveXObject("Msxml2.XMLHTTP");
+		} catch(e1) {
+			try {
+				//alert("IE 구버전이네요..")
+				return new ActiveXObject("Microsoft.XMLHTTP");
+			} catch(e2) {
+				return null;
+			}
+		}
+	} else if(window.XMLHttpRequest) {//비IE라면
+		//alert("IE 아니네요..")
+		return new XMLHttpRequest();
+	} else {
+		//alert("다른 브라우저 사용하세요..")
+		return null;
+	}
+}
+
+function timestart() {
+	httpRequest = getXMLHttpRequest();
+	httpRequest.onreadystatechange=timeget;
+	httpRequest.open("POST", "/ajaxtest/time.jsp", true);
+	httpRequest.send(null);
+}
+
+function timeget() {
+	var vt = document.getElementById("currenttime");
+	if(httpRequest.readyState == 4) {
+		if(httpRequest.status == 200) {
+			var ctime = httpRequest.responseText;
+			vt.innerHTML = ctime;
+			window.setTimeout("timestart();", 1000);
+		} else {
+			alert("문제발생!!! : " + httpRequest.status);
+		}
+	}// else {
+		//vt.innerHTML = "<img src='/ajaxtest/img/loading.gif' width='80'>";
+	//}
+}
+</script>
+</head>
+<body onload="javascript:timestart();">
+<font color="gray" size="20">현재 시간 : </font>
+<div id="currenttime"></div>
+<input type="button" value="시간" onclick="javascript:timestart();">
+</body>
+</html>

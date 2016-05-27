@@ -1,0 +1,9 @@
+package com.kitri.di.step11;
+
+public class PersonDto {
+	String name;
+	string id;
+	
+	double weight;
+	
+}

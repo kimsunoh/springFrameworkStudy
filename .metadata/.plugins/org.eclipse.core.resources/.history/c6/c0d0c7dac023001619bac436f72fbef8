@@ -1,0 +1,5 @@
+package com.kitri.aop.step01.advice;
+
+public class PerformenceTraceAdvice {
+	/*  */
+}

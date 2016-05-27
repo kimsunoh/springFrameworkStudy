@@ -1,0 +1,13 @@
+package com.kitri.hello.spring2;
+
+public class HelloApp {
+	public static void main(String[] args) {
+		HelloService hello = new HelloServiceKor();
+		String greet = hello.greeting("¼±¿À");
+
+//		HelloService hello = new HelloServiceEng();
+//		String greet = hello.greeting("Kim");
+		
+		System.out.println(greet);
+	}
+}

@@ -1,0 +1,5 @@
+package com.kitri.aop.model;
+
+public class MemberDto {
+
+}

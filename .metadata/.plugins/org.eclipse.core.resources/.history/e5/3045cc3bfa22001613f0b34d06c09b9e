@@ -1,0 +1,123 @@
+package com.kitri.haksa.service.db;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+import com.kitri.haksa.data.db.HaksaDto;
+
+public class HaksaDBServiceImpl implements HaksaService{
+	private BufferedReader in;
+	String job[] = {"학번","과목","부서"};
+	HaksaDao haksaDao;
+	boolean flag = true;
+	
+	public HaksaDBServiceImpl() {
+		in = new BufferedReader(new InputStreamReader(System.in));
+	}
+	
+	@Override
+	public void menu() {
+		while(flag) {
+			System.out.println("======메뉴 선택 ========");
+			System.out.println("1.등록");
+			System.out.println("2.찾기");
+			System.out.println("3.삭제");
+			System.out.println("4.전체출력");
+			System.out.println("==============");
+			System.out.println("0.종료");
+			System.out.println("==============");
+			System.out.print("메뉴번호 입력 :");
+			try {
+				int num = Integer.parseInt(in.readLine());
+				switch (num) {
+				case 1:
+					registerMenu();
+					break;
+				case 2:
+					findNameMenu();
+					break;
+				case 3:
+					deleteMenu();
+					break;
+				case 4:
+					selectAll();
+					break;
+				default:
+					processExit();
+				}
+			} catch (NumberFormatException | IOException e) {
+				/*System.out.println("0-4까지의 숫자만 입력하세요.");
+				요녀석은 소잃고 외양간 고치는 격, 예외를 미리 처리해주는게 좋다.*/
+				e.printStackTrace();
+			}
+		}
+	}
+
+	@Override
+	public void registerMenu() {
+		System.out.println("======메뉴 선택 ========");
+		System.out.println("1.학생");
+		System.out.println("2.교수");
+		System.out.println("3.관리자");
+		System.out.println("4.이전메뉴");
+		System.out.println("==============");
+		System.out.println("0.종료");
+		System.out.println("==============");
+		System.out.print("메뉴번호 입력 :");
+		
+		try {
+			int num = Integer.parseInt(in.readLine());
+			switch (num) {
+			case 1 : case 2 : case 3 : {
+				
+				HaksaDto haksaDto = new HaksaDto();
+				haksaDto.setKey(num);
+				System.out.println("나이 : ");
+				haksaDto.setAge(Integer.parseInt(in.readLine()));
+				System.out.println("이름 : ");
+				haksaDto.setName(in.readLine());
+				System.out.println(num-1 + " : ");
+				haksaDto.setValue(in.readLine());
+				
+				haksaDao.register(haksaDto);
+			}
+			}
+		} catch (NumberFormatException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+
+	@Override
+	public void findNameMenu() {
+		
+	}
+
+	@Override
+	public void deleteMenu() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void selectAll() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void processExit() {
+		try {
+			if (in != null)
+				in.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		flag = false;
+		System.exit(0);
+	}
+
+}

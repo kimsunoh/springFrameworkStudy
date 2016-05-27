@@ -1,0 +1,5 @@
+package com.kitri.di.step11;
+
+public class AddressDto {
+
+}

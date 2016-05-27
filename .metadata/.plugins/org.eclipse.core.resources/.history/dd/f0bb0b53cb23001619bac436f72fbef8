@@ -1,0 +1,16 @@
+package com.kitri.aop.step01.advice;
+
+import org.aspectj.lang.ProceedingJoinPoint;
+
+public class PerformenceTraceAdvice {
+	/* 성능확인 : 공통관심사 */
+	public Object trace(ProceedingJoinPoint joinPoint){
+		String signature = joinPoint.getSignature().toLongString();
+		System.out.println(signature);
+		/*여기서 하는 일은 수행시간 체크, 
+		 * 1.현재시간체크
+		 * 2.메소드 수행
+		 * 3.현재시간
+		 * 3-1 = 수행시간*/
+	}
+}

@@ -1,0 +1,17 @@
+package com.kitri.hello.spring2;
+
+public class HelloApp {
+	
+	/*
+	 * 1번에 비해서는 
+	 * */
+	public static void main(String[] args) {
+		HelloService hello = new HelloServiceKor();
+		String greet = hello.greeting("선오");
+
+//		HelloService hello = new HelloServiceEng();
+//		String greet = hello.greeting("Kim");
+		
+		System.out.println(greet);
+	}
+}

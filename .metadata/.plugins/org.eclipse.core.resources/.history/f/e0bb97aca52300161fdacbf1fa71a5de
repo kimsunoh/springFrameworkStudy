@@ -1,0 +1,11 @@
+package com.kitri.aop.service;
+
+import java.util.List;
+
+import com.kitri.aop.model.MemberDto;
+
+public interface MemberService {
+	int registerMember(MemberDto memberDto);
+	MemberDto getMember(String id);
+	List<MemberDto> listMember();
+}

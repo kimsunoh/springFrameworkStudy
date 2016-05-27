@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.io.PrintWriter"/>
+<fullyQualifiedTypeName name="com.kitri.member.MemberDto"/>
+<fullyQualifiedTypeName name="com.kitri.member.MemberDao"/>
+<fullyQualifiedTypeName name="com.ibatis.sqlmap.client.SqlMapClient"/>
+<fullyQualifiedTypeName name="com.ibatis.sqlmap.client.SqlMapClientBuilder"/>
+<fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
+<fullyQualifiedTypeName name="java.io.Reader"/>
+<fullyQualifiedTypeName name="com.ibatis.common.resources.Resources"/>
+<fullyQualifiedTypeName name="dom.kitri.ibatis.SqlMapConfig"/>
+<fullyQualifiedTypeName name="com.kitri.ibatis.SqlMapConfig"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.BeanFactory"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.xml.XmlBeanFactory"/>
+<fullyQualifiedTypeName name="org.springframework.core.io.ClassPathResource"/>
+<fullyQualifiedTypeName name="org.springframework.core.io.Resource"/>
+<fullyQualifiedTypeName name="org.springframework.core.io.FileSystemResource"/>
+<fullyQualifiedTypeName name="com.kitri.hello.spring4.HelloService"/>
+<fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+<fullyQualifiedTypeName name="java.sql.Connection"/>
+<fullyQualifiedTypeName name="java.sql.ResultSet"/>
+<fullyQualifiedTypeName name="com.kitri.di.model.MemberDto"/>
+<fullyQualifiedTypeName name="com.kitri.di.step05.OraDBConnection"/>
+<fullyQualifiedTypeName name="com.kitri.di.step06.OraDBConnection"/>
+<fullyQualifiedTypeName name="com.kitri.di.step06.MsDBConnetion"/>
+<fullyQualifiedTypeName name="com.kitri.di.step06.MemberDaoFactory"/>
+<fullyQualifiedTypeName name="java.sql.DriverManager"/>
+<fullyQualifiedTypeName name="org.springframework.context.annotation.Configuration"/>
+<fullyQualifiedTypeName name="org.springframework.context.annotation.AnnotationConfigApplicationContext"/>
+<fullyQualifiedTypeName name="org.springframework.context.annotation.Bean"/>
+<fullyQualifiedTypeName name="org.springframework.context.annotation.Scope"/>
+<fullyQualifiedTypeName name="org.springframework.jdbc.datasource.SimpleDriverDataSource"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="java.lang.Override"/>
+<fullyQualifiedTypeName name="com.kitri.di.step11.Person"/>
+<fullyQualifiedTypeName name="org.springframework.context.ApplicationContext"/>
+<fullyQualifiedTypeName name="org.springframework.context.support.ClassPathXmlApplicationContext"/>
+<fullyQualifiedTypeName name="com.kitri.haksa.service.db.HaksaDBServiceImpl"/>
+<fullyQualifiedTypeName name="com.kitri.haksa.service.db.HaksaServiceImpl"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="com.kitri.aop.dao.MemberDao"/>
+<fullyQualifiedTypeName name="javax.sql.DataSource"/>
+<fullyQualifiedTypeName name="com.kitri.aop.service.MemberService"/>
+<fullyQualifiedTypeName name="java.sql.SQLException"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="com.kitri.aop.model.MemberDto"/>
+</qualifiedTypeNameHistroy>

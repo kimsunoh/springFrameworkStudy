@@ -1,0 +1,19 @@
+package com.kitri.di.step08;
+
+public class MemberDaoFactory {
+	private MemberDao memberDao;
+	
+	public MemberDao getMemberDao(){
+		memberDao = new MemberDao(getOraDBConnection());
+		//DBConnection을 만들어서 Dao에게 주입해줌
+		return memberDao;
+	}
+	
+	private DBConnection getOraDBConnection(){
+		return new OraDBConnection();
+	}
+
+	private DBConnection getMSDBConnection(){
+		return new MsDBConnetion();
+	}
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="/ajaxtest/js/httpRequest.js"></script>
+<script type="text/javascript">
+<!--
+1.httpRequest 생성
+2.open
+3.send
+4.callback함수 생성
+5.화면에 뿌림
+-->
+function sendParam() {
+	var p = "name=" + document.getElementById("name").value;
+	sendParam("ajaxtest/param", params, callback, method);
+}
+</script>
+</head>
+<body>
+	<center>
+	<h3>ajax를 이용한 파라메터 전송</h3>
+		<form name="param" method="get" action="">
+			<input type="text" name="name" id="name">
+			<input type="button" value="전송" onclick="javascript:sendParam();">
+		</form>
+	</center>
+</body>
+</html>

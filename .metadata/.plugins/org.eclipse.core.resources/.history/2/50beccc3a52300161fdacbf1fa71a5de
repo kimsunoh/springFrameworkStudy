@@ -1,0 +1,6 @@
+package com.kitri.aop.model;
+
+public class MemberDto {
+	private String id;
+	private String name;
+}

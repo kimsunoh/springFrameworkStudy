@@ -1,0 +1,63 @@
+package com.kitri.di.step11;
+
+public class PersonDto {
+	private String name;
+	private String id;
+	private int money;
+	private double weight;
+	private AddressDto addressDto;
+	
+	public PersonDto() {}
+
+	public PersonDto(String name) {
+		super();
+		this.name = name;
+	}
+
+	public PersonDto(String name, String id) {
+		super();
+		this.name = name;
+		this.id = id;
+	}
+	
+	public PersonDto(String name, AddressDto addressDto) {
+		super();
+		this.name = name;
+		this.addressDto = addressDto;
+	}
+
+	public PersonDto(String name, int money) {
+		super();
+		this.name = name;
+		this.money = money;
+	}
+
+	public PersonDto(String name, int money, double weight) {
+		super();
+		this.name = name;
+		this.money = money;
+		this.weight = weight;
+	}
+
+	public PersonDto(String name, String id, int money, double weight) {
+		super();
+		this.name = name;
+		this.id = id;
+		this.money = money;
+		this.weight = weight;
+	}
+	
+	public PersonDto(String name, String id, int money, double weight, AddressDto addressDto) {
+		super();
+		this.name = name;
+		this.id = id;
+		this.money = money;
+		this.weight = weight;
+		this.addressDto = addressDto;
+	}
+
+	@Override
+	public String toString() {
+		return "이름:" +  name +"\t아이디:" + id + "\t몸무게:" + weight + "\t재산:" + money + "\t주소:" + addressDto;
+	}
+}

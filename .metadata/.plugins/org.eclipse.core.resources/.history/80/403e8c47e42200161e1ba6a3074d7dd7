@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+	<bean id="p1" class="com.kitri.di.step11.Person"></bean>
+	<bean id="p2" class="com.kitri.di.step11.Person">
+		<constructor-arg>
+			<value>김선오</value>
+		</constructor-arg>
+	</bean>
+	<bean id="p3" class="com.kitri.di.step11.Person">
+		<constructor-arg type="int" value="3200000"/>
+	</bean>
+	<bean id="p4" class="com.kitri.di.step11.Person">
+		<constructor-arg index="1" value="ksno"/>
+		<constructor-arg index="0" value="김선오"/>
+	</bean>
+	<bean id="p5" class="com.kitri.di.step11.Person">
+		<constructor-arg type="int" value="23200000"/>
+		<constructor-arg value="김선오"/>
+	</bean>
+	<bean id="p6" class="com.kitri.di.step11.Person">
+		<constructor-arg type="double" value="70"/>
+		<constructor-arg type="int" value="320000000"/>
+	</bean>
+	<bean id="p7" class="com.kitri.di.step11.Person">
+		<constructor-arg type="double" value="70.7"/>
+		<constructor-arg type="int" value="320000000"/>
+		<constructor-arg value="김선오"/>
+	</bean>
+	<!-- 타입이 셋다 스트링인 녀석이 없으면 자동으로 타입을 맞춰서 생성한다. 
+		하지만, double이 int를 포함하므로 명확하지 않다.-->
+	<!-- index를 줘도 되고, type을 줘도 된다.-->
+	<bean id="p8" class="com.kitri.di.step11.Person">
+		<constructor-arg ref="a1"/>
+		<constructor-arg value="김선오"/>
+	</bean>
+	<bean id="a1" class="com.kitri.di.step11.Address">
+		<constructor-arg value="123-456"/>
+		<constructor-arg value="서울시 구로구 구로동"/>
+		<constructor-arg value="코오롱 사이언스 밸리 1차 4층"/>
+	</bean>
+	
+	<bean id="p9" class="com.kitri.di.step11.Person">
+		<constructor-arg ref="a1"/>
+		<constructor-arg type="double" value="70.7"/>
+		<constructor-arg value="320000"/>
+		<constructor-arg index="0" value="김선오"/>
+		<constructor-arg value="ksno"/>
+	</bean>
+</beans>
+<!-- Dto를 셋팅 할 것임-->

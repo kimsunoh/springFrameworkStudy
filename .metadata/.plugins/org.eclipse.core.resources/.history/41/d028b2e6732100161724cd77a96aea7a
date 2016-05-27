@@ -1,0 +1,18 @@
+package com.kitri.hello.spring4;
+
+import org.springframework.beans.factory.BeanFactory;
+
+public class HelloApp {
+	//Spring
+	public static void main(String[] args) {
+		
+		BeanFactory factory = new Xml
+		
+//		HelloService hello = HelloServiceFactory.getHelloServiceKor();
+		HelloService hello = HelloServiceFactory.getHelloServiceEng();
+		String greet = hello.greeting("¼±¿À");
+
+		
+		System.out.println(greet);
+	}
+}

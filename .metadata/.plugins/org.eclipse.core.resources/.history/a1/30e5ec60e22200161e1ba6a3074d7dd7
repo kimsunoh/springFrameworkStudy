@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+	<bean id="p1" class="com.kitri.di.step11.Person"></bean>
+	<bean id="p2" class="com.kitri.di.step11.Person">
+		<constructor-arg>
+			<value>김선오</value>
+		</constructor-arg>
+	</bean>
+	<!-- 	<bean id="p3" class="com.kitri.di.step11.Person">
+		<constructor-arg type="int" value="3200000"/>
+	</bean> -->
+	<bean id="p4" class="com.kitri.di.step11.Person">
+		<constructor-arg index="1" value="ksno"/>
+		<constructor-arg index="0" value="김선오"/>
+	</bean>
+	<bean id="p5" class="com.kitri.di.step11.Person">
+		<constructor-arg type="int" value="23200000"/>
+		<constructor-arg value="김선오"/>
+	</bean>
+	<bean id="p6" class="com.kitri.di.step11.Person">
+		<constructor-arg type="Double" value="70"/>
+		<constructor-arg type="int" value="320000000"/>
+	</bean>
+</beans>
+<!-- Dto를 셋팅 할 것임-->

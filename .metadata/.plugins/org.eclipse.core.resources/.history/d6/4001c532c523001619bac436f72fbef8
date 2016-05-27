@@ -1,0 +1,24 @@
+package com.kitri.aop.step01;
+
+import java.sql.SQLException;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.kitri.aop.controller.MemberController;
+import com.kitri.aop.model.MemberDto;
+
+public class AopTest {
+	public static void main(String[] args) throws SQLException {
+		ApplicationContext context = new ClassPathXmlApplicationContext("/com/kitri/aop/step01/config/applicationContext.xml");
+		MemberController control = context.getBean("mcontrol", MemberController.class);
+
+		String id = "java2";
+		MemberDto memberDto = new MemberDto();
+		memberDto.setId("ksno");
+		memberDto.setName("±è±è±è");
+		
+		int cnt = control.registerMember(memberDto);
+		System.out.println("µî·Ï " + (cnt != 0 ? "¼º°ø" : "½ÇÆÐ!" ));
+	}
+}

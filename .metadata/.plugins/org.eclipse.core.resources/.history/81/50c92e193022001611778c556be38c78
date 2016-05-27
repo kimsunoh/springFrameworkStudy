@@ -1,0 +1,14 @@
+package com.kitri.di.step05;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+
+public class MsDBConnetion implements DBConnection {
+
+	@Override
+	public Connection makeConnection() throws ClassNotFoundException, SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

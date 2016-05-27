@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+var httpRequest;
+
+function getXmlHttpRequest() {
+	if(window.ActiveXObject){	<!-- IE라면 -->
+		try {
+			return new ActiveXObject("Msxml2.XMLHTTP");
+			<!-- IE8버전이상 -->
+		} catch(e1) {
+			try {
+				alter("IE 구버전 아니네요...");
+				return new ActiveXObject("Microsoft.XMLHTTP");
+				<!-- IE7버전이하 -->
+			} catch(e2) {
+				return null;
+			}
+		}
+	} else if(window.XMLHttpRequest){
+		alter("IE 아니네요...");
+		return new XMLHttpRequest();
+	} else {
+		alter("다른브라우저를 사용하세요.");
+		return null;
+	}
+}
+
+function timestart() {
+	httpRequest = getXmlHttpRequest();
+}
+</script>
+</head>
+<font color="gray" size="20">현재 시간 : </font>
+<body>
+	<div id="currenttime"></div>
+	<input type="button" value="시간" onclick="javascript:timestart();">
+</body>
+</html>

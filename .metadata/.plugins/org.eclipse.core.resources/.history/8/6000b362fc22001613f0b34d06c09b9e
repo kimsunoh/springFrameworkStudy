@@ -1,0 +1,16 @@
+package com.kitri.haksa.test;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.kitri.haksa.service.db.HaksaDBServiceImpl;
+import com.kitri.haksa.service.db.HaksaService;
+
+public class HaksaDBMain {
+	
+	public static void main(String[] args) {
+		ApplicationContext context = new ClassPathXmlApplicationContext("com/kitri/haksa/config/applicationContext.xml");
+		HaksaService hs = context.getBean("hservice",HaksaDBServiceImpl.class);
+		hs.menu();
+	}
+}

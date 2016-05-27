@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="/ajaxtest/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+var ml;
+
+function searchmember() {
+	var key = document.getElementById("key").value;
+	var word = document.getElementById("word").value;
+    $.ajax({
+      type: "GET",
+      url: "/ajaxtest/json",
+      dataType : "json",
+      data: { "key": key, "word": word },
+      success:function(data) {
+        makeList(data);
+      }
+    });
+}
+
+function makeList(data) {
+	ml = document.getElementById("ml");
+	var len = data.jlist.length;
+	clearData();
+	for(var i=0;i<len;i++) {
+		var row = createRow(data.jlist[i].uname, data.jlist[i].uid, data.jlist[i].uemail);
+		ml.appendChild(row);
+	}
+}
+
+function createRow(name, id, email) {
+	var row = document.createElement("tr");//<tr></tr>
+	row.appendChild(createCell(name));//<tr><td>안효인</td></tr>
+	row.appendChild(createCell(id));//<tr><td>안효인</td><td>java2</td></tr>
+	row.appendChild(createCell(email));//<tr><td>안효인</td><td>java2</td><td>java2@naver.com</td></tr>
+	
+	return row;
+}
+
+function createCell(data) {
+	var cell = document.createElement("td");
+	cell.setAttribute("bgcolor", "#ffccff");//<td bgcolor="#66ffff"></td>
+	cell.setAttribute("border", "1");//<td bgcolor="#66ffff" border="1"></td>
+	var txtNode = document.createTextNode(data);//안효인
+	cell.appendChild(txtNode);//<td>안효인</td>
+	
+	return cell;
+}
+
+function clearData() {
+	var len = ml.childNodes.length;
+	for(var i=len-1;i>=0;i--)
+		ml.removeChild(ml.childNodes[i]);
+}
+</script>
+</head>
+<body>
+<center>
+<h3>회원리스트</h3>
+<form name="" method="" action="">
+<table width="400">
+<tr>
+	<td align="right">
+	<select name="key" id="key">
+		<option value="id">아이디
+		<option value="name">이름
+	</select>
+	<input type="text" name="word" id="word">
+	<input type="button" value="검색" onclick="javascript:searchmember();">
+	</td>
+</tr>
+</table>
+</form>
+<table width="400" border="1">
+<tr>
+	<th width="100">이름</th>
+	<th width="100">아이디</th>
+	<th>이메일</th>
+</tr>
+<tbody id="ml"></tbody>
+</table>
+</center>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

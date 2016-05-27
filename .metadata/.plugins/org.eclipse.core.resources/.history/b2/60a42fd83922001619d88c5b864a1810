@@ -1,0 +1,22 @@
+package com.kitri.di.step08;
+
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class MemberDaoFactory {
+	private MemberDao memberDao; //Spring Configuration file(설정파일)대신
+	
+	public MemberDao getMemberDao(){
+		memberDao = new MemberDao(getOraDBConnection());
+		//DBConnection을 만들어서 Dao에게 주입해줌
+		return memberDao;
+	}
+	
+	private DBConnection getOraDBConnection(){
+		return new OraDBConnection();
+	}
+
+	private DBConnection getMSDBConnection(){
+		return new MsDBConnetion();
+	}
+}

@@ -1,0 +1,6 @@
+package dom.kitri.ibatis;
+
+public class SqlMapConfig {
+
+}
+

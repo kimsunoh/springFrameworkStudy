@@ -1,0 +1,41 @@
+1464136939703	Copy package
+1464136943379	Copy package
+1464136948217	Copy package
+1464136953495	Copy package
+1464136958163	Copy package
+1464136962312	Copy package
+1464136966587	Copy package
+1464136971461	Copy package
+1464136993203	Rename package 'com.kitri.model'
+1464137172696	Rename type 'memberDto'
+1464140447350	Copy compilation unit
+1464140479835	Extract method 'makeConnection'
+1464141897351	Copy compilation units
+1464141945543	Delete elements
+1464142051198	Extract method 'connectionMake'
+1464142239260	Copy compilation units
+1464142247842	Delete elements
+1464142553952	Copy compilation units
+1464150065925	Copy compilation units
+1464150605926	Copy compilation units
+1464150620211	Delete element
+1464152990955	Delete element
+1464153977727	Copy compilation units
+1464154074002	Copy compilation unit
+1464155310248	Copy elements
+1464155388532	Delete elements
+1464158338998	Copy package
+1464158390663	Copy compilation units
+1464158429874	Copy compilation unit
+1464223477627	Rename type 'AddressDto'
+1464223488991	Rename type 'PersonDto'
+1464223649626	Delete element
+1464224207310	Rename field 'addressDto'
+1464225952309	Rename local variable 'p3'
+1464226168627	Rename local variable 'p4'
+1464226483203	Rename local variable 'p5'
+1464226763197	Rename local variable 'p6'
+1464226993178	Rename local variable 'p7'
+1464227472417	Rename local variable 'p8'
+1464229347269	Delete elements
+1464328979220	Rename type 'MsDBConnetion'

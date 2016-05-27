@@ -1,0 +1,5 @@
+package com.kitri.aop.controller;
+
+public class MemberController {
+
+}

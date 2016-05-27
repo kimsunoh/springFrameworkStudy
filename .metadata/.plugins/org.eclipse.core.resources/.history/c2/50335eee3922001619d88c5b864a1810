@@ -1,0 +1,24 @@
+package com.kitri.di.step08;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration //설정파일 대신 이 클래스를 사용하겠다.
+public class MemberDaoFactory {
+	private MemberDao memberDao;
+	
+	@Bean
+	public MemberDao getMemberDao(){
+		memberDao = new MemberDao(getOraDBConnection());
+		return memberDao;
+	}
+	
+
+	private DBConnection getOraDBConnection(){
+		return new OraDBConnection();
+	}
+
+	private DBConnection getMSDBConnection(){
+		return new MsDBConnetion();
+	}
+}

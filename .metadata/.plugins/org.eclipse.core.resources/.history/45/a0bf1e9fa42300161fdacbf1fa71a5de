@@ -1,0 +1,32 @@
+package com.kitri.aop.dao;
+
+import java.util.List;
+
+import javax.sql.DataSource;
+
+import com.kitri.aop.model.MemberDto;
+
+public class MemberDaoImpl implements MemberDao {
+	private DataSource dataSource;
+	
+	public void setDataSource(DataSource dataSource) {
+		this.dataSource = dataSource;
+	}
+
+	@Override
+	public int registerMember(MemberDto memberDto) {
+		return 0;
+	}
+
+	@Override
+	public MemberDto getMember(String id) {
+		return null;
+	}
+
+	@Override
+	public List<MemberDto> listMember() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

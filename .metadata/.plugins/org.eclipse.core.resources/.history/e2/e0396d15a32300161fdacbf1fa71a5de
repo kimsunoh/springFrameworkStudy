@@ -1,0 +1,5 @@
+package com.kitri.aop.dao;
+
+public interface MemberDao {
+
+}

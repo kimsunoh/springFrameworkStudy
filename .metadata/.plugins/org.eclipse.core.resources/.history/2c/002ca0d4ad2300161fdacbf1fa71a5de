@@ -1,0 +1,26 @@
+package com.kitri.aop.controller;
+
+import java.util.List;
+
+import com.kitri.aop.model.MemberDto;
+import com.kitri.aop.service.MemberService;
+
+public class MemberController {
+	private MemberService memberService;
+
+	public void setMemberService(MemberService memberService) {
+		this.memberService = memberService;
+	}
+	
+	public int registerMember(MemberDto memberDto) {
+		return memberService.registerMember(memberDto);
+	}
+
+	public MemberDto getMember(String id) {
+		return memberService.getMember(id);
+	}
+
+	public List<MemberDto> listMember() {
+		return memberService.listMember();
+	}
+}

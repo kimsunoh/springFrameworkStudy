@@ -1,0 +1,18 @@
+package com.kitri.di.step06;
+
+public class MemberDaoFactory {
+	private MemberDao memberDao;
+	
+	public MemberDao getMemberDao(){
+		memberDao = new MemberDao();
+		return memberDao;
+	}
+	
+	private DBConnection getOraDBConnection(){
+		return new OraDBConnection();
+	}
+
+	public DBConnection getMSDBConnection(){
+		return null;
+	}
+}

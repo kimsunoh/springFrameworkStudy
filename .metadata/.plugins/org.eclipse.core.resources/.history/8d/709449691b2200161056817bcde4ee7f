@@ -1,0 +1,5 @@
+package com.kitri.di.step02;
+
+public class MsMemberDao extends MemberDao{
+	
+}

@@ -1,0 +1,5 @@
+package com.kitri.hello.spring3;
+
+public class HelloServiceFactory {
+
+}

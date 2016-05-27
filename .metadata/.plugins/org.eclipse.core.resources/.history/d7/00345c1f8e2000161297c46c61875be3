@@ -1,0 +1,51 @@
+package com.kitri.member.model;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import com.kitri.util.DBClose;
+import com.kitri.util.DBConnection;
+
+public class MemberDaoImpl implements MemberDao {
+
+	@Override
+	public int idCheck(String id) {
+		return 0;
+	}
+
+	@Override
+	public List<ZipDto> zipSearch(String dong) {
+		return null;
+	}
+
+	@Override
+	public int register(MemberDto memberDto) {
+		return 0;
+	}
+
+	@Override
+	public MemberDto getMember(String id) {
+		return null;
+	}
+
+	@Override
+	public int modify(MemberDto memberDto) {
+		return 0;
+	}
+
+	@Override
+	public int delete(String id) {
+		return 0;
+	}
+
+	@Override
+	public MemberDto login(Map<String, String> map) {
+		return null;
+	}
+}

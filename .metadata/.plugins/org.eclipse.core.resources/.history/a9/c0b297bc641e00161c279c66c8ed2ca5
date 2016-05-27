@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="/ajaxtest/js/httpRequest.js"></script>
+<script type="text/javascript">
+	function searchmember() {
+		var word = document.getElementById("word").value;
+		var key = document.getElementById("key").value;
+		var params = "word=" + encodeURI(word) + "&key=" + key;
+		sendRequest("/ajaxtest/admin", params, reciveList, "GET");
+	}
+
+	function reciveList() {
+		var ml = document.getElementById("ml");
+		if (httpRequest.readyState == 4) {
+			if (httpRequest.status == 200) {
+				var mdata = httpRequest.responseXML;
+					<!-- xml 객체로 받아옴 -->
+				var memberList = mdata.getElementsByTagName("member");
+				var len = memberList.length;
+				
+				for(var i = 0 ; i < len ; i++) {
+					var member = memberList[i];
+					var name = member.getElementByName("name").item(0).firstchild.nodeValue;
+					var id = member.getElementByName("id").item(0).firstchild.nodeValue;
+					var email = member.getElementByName("email").item(0).firstchild.nodeValue;
+					
+					var cell = createCell(name,id,email);
+				}
+			} else {
+				alert("문제발생 : " + httpRequest.status);
+			}
+		} else {
+			ml.innerHTML = "<img src='/ajaxtest/img/loading.gif' width='80'>";
+		}
+	}
+</script>
+</head>
+<body>
+	<center>
+		<h3>회원리스트</h3>
+		<form action="" name="" method="">
+			<table width="400">
+				<tr>
+					<td>
+						<select name="key" id="key">
+							<option value="id">아이디
+							<option value="name">이름
+						</select>
+					</td>
+					<td>
+						<input type="text" name="word" id="word">
+					</td>
+					<td>
+						<input type="button" value="검색" onclick="javascript:searchmember();">
+					</td>
+				</tr>
+			</table>
+		</form>
+		<table width="400">
+			<tr>
+				<th width="100">이름</th>
+				<th width="100">아이디</th>
+				<th>이메일</th>
+			</tr>
+			<tbody id="ml"></tbody>
+		</table>
+	</center>
+</body>
+</html>

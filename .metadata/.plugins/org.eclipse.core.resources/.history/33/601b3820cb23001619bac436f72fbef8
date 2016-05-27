@@ -1,0 +1,6 @@
+package com.kitri.aop.step01.advice;
+
+public class PerformenceTraceAdvice {
+	/* 성능확인 : 공통관심사 */
+	public Object trace(Proceding)
+}

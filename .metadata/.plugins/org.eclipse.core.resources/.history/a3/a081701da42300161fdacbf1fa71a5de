@@ -1,0 +1,33 @@
+package com.kitri.aop.dao;
+
+import java.util.List;
+
+import com.kitri.aop.model.MemberDto;
+import com.kitri.aop.service.MemberService;
+
+public class MemberDaoImpl implements MemberDao {
+	private MemberService memberService; //이녀석을 싱글톤 해주는 것은 스프링이 다 알아서 해줌
+	
+	public void setMemberService(MemberService memberService) {
+		this.memberService = memberService;
+	}
+	
+	@Override
+	public int registerMember(MemberDto memberDto) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public MemberDto getMember(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<MemberDto> listMember() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

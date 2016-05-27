@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" 
+"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap>
+    <select id="idcount" parameterClass="String" resultClass="int">
+        select count(id) cnt
+        from member
+        where id = #id#
+    </select>
+    <select id="searchdong" parameterClass="String" resultClass="com.kitri.member.model.ZipDto">
+        select substr(zipcode, 1, instr(zipcode, '-')-1) zip1, 
+            substr(zipcode, instr(zipcode, '-')+1) zip2, sido, gugun, 
+            dong, nvl(bunji, ' ') bunji, seq
+        from zipcode
+        where dong like '%'||#dong#||'%'
+    </select>
+    <insert id="register" parameterClass="com.kitri.member.model.MemberDto">
+        insert into member (name, id, pass, email1, email2, zip1,
+            zip2, addr1, addr2, tel1, tel2, tel3, joindate)
+            values ( #name#, #id#, #pass#, #email1#, #email2#, #zip1#, #zip2#, #addr1#, #addr2#, #tel1#, #tel2#, #tel3#, sysdate)
+    </insert>
+</sqlMap>
+

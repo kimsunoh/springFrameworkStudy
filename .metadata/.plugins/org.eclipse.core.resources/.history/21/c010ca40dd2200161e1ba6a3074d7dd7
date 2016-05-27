@@ -1,0 +1,14 @@
+package com.kitri.di.step11;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class PersonMain {
+
+	public static void main(String[] args) {
+		ApplicationContext context1 = new ClassPathXmlApplicationContext("com/kitri/di/step11/applicationContext_con.xml");
+		Person p1 = context1.getBean("p1",Person.class);
+		System.out.println(p1);
+		
+	}
+}

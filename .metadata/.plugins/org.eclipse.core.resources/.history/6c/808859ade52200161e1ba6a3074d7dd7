@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+	<bean id="p1" class="com.kitri.di.step11.Person"></bean>
+	<bean id="p2" class="com.kitri.di.step11.Person">
+		<property name="name" value="김선오"></property>
+	</bean>
+	<bean id="p3" class="com.kitri.di.step11.Person">
+		<property name="money" value="320000000"></property>
+	</bean>
+	<bean id="p4" class="com.kitri.di.step11.Person">
+		<property name="name" value="김선오"></property>
+		<property name="id" value="ksno"></property>
+	</bean>
+	<bean id="p5" class="com.kitri.di.step11.Person">
+		<property name="money" value="23200000"></property>
+		<property name="name" value="김선오"></property>
+	</bean>
+	<bean id="p6" class="com.kitri.di.step11.Person">
+		<property name="weight" value="70"/>
+		<property name="money" value="320000000"/>
+	</bean>
+	<bean id="p7" class="com.kitri.di.step11.Person">
+		<property name="weight" value="70"/>
+		<property name="money" value="320000000"/>
+		<property name="name" value="김선오"/>
+	</bean>
+	<bean id="p8" class="com.kitri.di.step11.Person">
+		<property name="addrress" ref="a1"/>
+		<property name="name" value="김선오"/>
+	</bean>
+	<bean id="a1" class="com.kitri.di.step11.Address">
+		<property name="zip" value="123-456"/>
+		<constructor-arg value="서울시 구로구 구로동"/>
+		<constructor-arg value="코오롱 사이언스 밸리 1차 4층"/>
+	</bean>
+	
+	<bean id="p9" class="com.kitri.di.step11.Person">
+		<constructor-arg ref="a1"/>
+		<constructor-arg type="double" value="70.7"/>
+		<constructor-arg type="int" value="320000"/>
+		<constructor-arg index="0" value="김선오"/>
+		<constructor-arg value="ksno"/>
+	</bean>
+</beans>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?> <!-- 내부 DTD -->
+<!DOCTYPE book[ <!-- 독타입의 루트는 book-->
+    <!ELEMENT book (title?, author, price)>
+        <!-- 엘리먼트 book 안에는 ()요녀석들이 온다-->
+        <!ELEMENT title (#PCDATA)>
+            <!-- title은 엘리먼트이고, 타입은 #PCDATA이다 -->
+        <!ELEMENT author (#PCDATA)>
+        <!ELEMENT price (#PCDATA)>
+]>
+
+<book>
+    <title>java &amp; xml</title> <!-- 빌트인 엔티티 -->
+    <author>홍길동</author>
+    <price>20000</price>
+</book>

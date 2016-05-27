@@ -1,0 +1,89 @@
+package com.kitri.haksa.service.db;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import javax.sql.DataSource;
+
+import com.kitri.haksa.data.db.HaksaDto;
+
+public class HaksaDao {
+	private DataSource datasource;
+	
+	
+	public void setDatasource(DataSource datasource) {
+		this.datasource = datasource;
+	}
+
+	public HaksaDao() {}
+	
+	public void register(HaksaDto haksaDto) {
+		Connection conn = null;
+		Statement stmt = null;
+		
+		try {
+			conn = datasource.getConnection();
+			String sql = "insert into school (name, age, key, value) \n";
+			sql += "value '" + haksaDto.getName()  + "', "+ haksaDto.getAge() ;
+			sql += "', " + haksaDto.getKey() + ", '" + haksaDto.getValue() +"'";
+			
+			stmt = conn.createStatement();
+			int cnt = stmt.executeUpdate(sql);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (stmt != null)
+					stmt.close();
+				if (conn != null)
+					conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} 
+		}
+	}
+	
+	public HaksaDto findName(String name){
+		HaksaDto dto = new HaksaDto();
+		
+		Connection conn = null;
+		Statement stmt = null;
+		ResultSet rs = null;
+		
+		try {
+			conn = datasource.getConnection();
+			
+			String sql  = "";
+			sql += "select name, age, key, value \n";
+			sql += "from school, key \n";
+			sql += "where name = '" + name + "'";
+			
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(sql);
+			
+			if (rs.next()) {
+				dto.setName(rs.getString("name"));
+				dto.setAge(Integer.parseInt(rs.getString("age")));
+				dto.setKey(Integer.parseInt(rs.getString("key")));
+				dto.setValue(rs.getString("value"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null)
+					rs.close();
+				if (stmt != null)
+					stmt.close();
+				if (conn != null)
+					conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return dto;
+	}
+}

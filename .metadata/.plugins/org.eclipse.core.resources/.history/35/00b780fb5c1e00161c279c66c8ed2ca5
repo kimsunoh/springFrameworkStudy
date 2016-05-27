@@ -1,0 +1,49 @@
+package com.kitri.member;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+public class MemberDao {
+	public MemberDao(){
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public List<MemberDto> getMemberList(String key, String word){
+		List<MemberDto> list = new ArrayList<MemberDto>();
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try {
+			conn = DriverManager.getConnection("jdbc:oracle:thin:@192.168.12.100:1521:orcl", "kitri", "kitri");
+			String sql ="";
+			sql += "select id, name, email1||'@'||email2 as email \n";
+			sql += "from member\n";
+			//sql += "where ";
+			pstmt = conn.prepareStatement(sql);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()){
+				MemberDto memberDto = new MemberDto();
+				memberDto.setString(rs.getString("id"));
+				memberDto.setString(rs.getString("name"));
+				memberDto.setString(rs.getString("email"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return list;
+	}
+}

@@ -1,0 +1,38 @@
+package com.kitri.di.step05;
+
+import java.sql.SQLException;
+
+import com.kitri.di.model.MemberDto;
+
+public class MemberMain { /*Client 부분*/
+	/*
+	 * 클라이언트 측에서 어떤 DB를 사용할지 정해서 넘겨줌. (Interface로 지정해서 넘겨주면 MsDBConnection을 넘겨줘도 됨)
+	 * 서버측은 아무것도 안바껴도 되게 됨
+	 * */
+	
+	/* 
+	 * DBConnection이 필요한 곳은 서버지만, 객체를 생성하는 곳은 클라이언트, 
+	 * 클라이언트가 서버에게 의존성을 주입한다.
+	 * */ 
+	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+		DBConnection dbc = new OraDBConnection();
+		MemberDao memberDao = new MemberDao(dbc);
+		MemberDto memberDto = new MemberDto();
+		memberDto.setId("ksno1234");
+		memberDto.setName("김선오");
+		
+		int cnt = memberDao.join(memberDto);
+		System.out.println("입력 " + (cnt != 0 ? "성공!":"실패!!"));
+		
+		String sid = "ksno1234";
+		MemberDto sdto = memberDao.search(sid);
+		if(sdto != null) {
+			System.out.println("이름 : " + sdto.getName());
+			System.out.println("아이디 : " + sdto.getId());
+			System.out.println("가입일 : " + sdto.getJoindate());			
+		}
+	}
+	/*
+	 * Main이 바뀌는 문제 발생
+	 * */
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+	
+	<bean name="heng, eng" class="com.kitri.hello.spring4.HelloServiceEng" scope="singleton"></bean>
+	<!-- scope의 default가 singlton, prototype으로 바꾸면 풀을 만들수 잇음
+		name은 여러 값 사용 가능, id는 단일 값
+		<bean name="heng" class="com.kitri.hello.spring4.HelloServiceEng" scope="prototype"></bean>
+	-->
+	<bean name="hkor" class="com.kitri.hello.spring4.HelloServiceKor"></bean>
+
+</beans>

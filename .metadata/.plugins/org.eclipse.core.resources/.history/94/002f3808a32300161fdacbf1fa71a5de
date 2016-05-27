@@ -1,0 +1,5 @@
+package com.kitri.aop.service;
+
+public interface MemberService {
+	int registerMember(MemberDto memberDto);
+}

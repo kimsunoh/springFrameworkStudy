@@ -1,0 +1,20 @@
+package dom.kitri.ibatis;
+
+import java.io.Reader;
+
+import com.ibatis.sqlmap.client.SqlMapClient;
+import com.ibatis.sqlmap.client.SqlMapClientBuilder;
+
+public class SqlMapConfig {
+	private static SqlMapClient sqlMapClient;
+
+	static {
+		Reader reder = ;
+		sqlMapClient  = SqlMapClientBuilder.buildSqlMapClient();
+	}
+	
+	public static SqlMapClient getSqlMapClient() {
+		return sqlMapClient;
+	}
+}
+

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="/ajaxtest/js/httpRequest.js"></script>
+<script type="text/javascript">
+<!--
+1.httpRequest 생성
+2.open
+3.send
+4.callback함수 생성
+5.화면에 뿌림
+-->
+function sendParam() {
+	var p = document.getElementById("name").value;
+	var params = "name=" + p;
+	sendParam("ajaxtest/param", params, reciveParam, "GET");
+}
+
+function reciveParam() {
+	var vt = document.getElementById("currenttime");
+	if(httpRequest.readyState == 4) {
+		<!-- 4 : 응답받았을때, 시간 뿌릴 것-->
+		if(httpRequest.status == 200) {
+			<!-- 정상적인 응답일  때만 뿌림 -->
+			var ctime = httpRequest.responseText;
+			vt.innerHTML = ctime;
+			window.setTimeout("timestart();", 1000);
+		} else {
+			alert("문제발생 : " + httpRequest.status);
+		}
+		
+	} else { <!-- 응답 기다릴 때-->
+		vt.innerHTML = "<img src='/ajaxtest/img/loading.gif' width='80'>";
+	}
+}
+</script>
+</head>
+<body>
+	<center>
+	<h3>ajax를 이용한 파라메터 전송</h3>
+		<form name="param" method="get" action="">
+			<input type="text" name="name" id="name">
+			<input type="button" value="전송" onclick="javascript:sendParam();">
+		</form>
+		<div id="viewInfo"></div>
+	</center>
+</body>
+</html>

@@ -1,0 +1,13 @@
+package com.kitri.di.step02;
+
+import java.sql.Connection;
+
+public class OraMemberDao extends MemberDao{
+
+	@Override
+	public Connection makeConnection() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

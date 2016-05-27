@@ -1,0 +1,44 @@
+package com.kitri.member.model;
+
+import java.util.List;
+import java.util.Map;
+
+import dom.kitri.ibatis.SqlMapConfig;
+
+public class MemberDaoImpl implements MemberDao {
+
+	@Override
+	public int idCheck(String id) {
+		return SqlMapConfig.getSqlMapClient().queryForObject(arg0);
+	}
+
+	@Override
+	public List<ZipDto> zipSearch(String dong) {
+		return null;
+	}
+
+	@Override
+	public int register(MemberDto memberDto) {
+		return 0;
+	}
+
+	@Override
+	public MemberDto getMember(String id) {
+		return null;
+	}
+
+	@Override
+	public int modify(MemberDto memberDto) {
+		return 0;
+	}
+
+	@Override
+	public int delete(String id) {
+		return 0;
+	}
+
+	@Override
+	public MemberDto login(Map<String, String> map) {
+		return null;
+	}
+}

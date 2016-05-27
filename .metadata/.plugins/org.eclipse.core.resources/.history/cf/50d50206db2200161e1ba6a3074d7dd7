@@ -1,0 +1,19 @@
+package com.kitri.di.step11;
+
+public class AddressDto {
+	private String zip;
+	private String address;
+	private String detailAddress;
+	
+	public AddressDto(String zip, String address, String detailAddress) {
+		super();
+		this.zip = zip;
+		this.address = address;
+		this.detailAddress = detailAddress;
+	}
+
+	@Override
+	public String toString() {
+		return "аж╪р : " + zip + "  " + address + "  " + detailAddress;
+	}
+}

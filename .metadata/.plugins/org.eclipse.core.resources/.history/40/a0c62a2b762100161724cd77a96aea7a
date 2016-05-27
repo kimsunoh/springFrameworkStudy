@@ -1,0 +1,25 @@
+package com.kitri.hello.spring4;
+
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.xml.XmlBeanFactory;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.FileSystemResource;
+import org.springframework.core.io.Resource;
+
+public class HelloApp {
+	//Spring
+	public static void main(String[] args) {
+		Resource resource = new ClassPathResource("com/kitri/hello/spring4/applicationContext.xml");
+		BeanFactory factory = new XmlBeanFactory(resource);
+		
+//		HelloService hello = HelloServiceFactory.getHelloServiceKor();
+		HelloService hello = (HelloService) factory.getBean("heng");
+		String greet = hello.greeting("識神");
+
+		HelloService hello2 = (HelloService) factory.getBean("eng");
+		String greet2 = hello2.greeting("識神");
+		
+		System.out.println(hello + "                            " + hello2);
+		System.out.println(greet);
+	}
+}

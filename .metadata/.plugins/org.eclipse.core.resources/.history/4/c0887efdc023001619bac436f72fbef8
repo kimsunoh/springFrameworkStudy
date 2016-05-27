@@ -1,0 +1,7 @@
+package com.kitri.aop.step01;
+
+public class AopTest {
+	public static void main(String[] args) {
+		MemberController control = ;
+	}
+}

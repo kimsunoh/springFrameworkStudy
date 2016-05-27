@@ -1,0 +1,30 @@
+package com.kitri.aop.service;
+
+import java.util.List;
+
+import com.kitri.aop.dao.MemberDao;
+import com.kitri.aop.model.MemberDto;
+
+public class MemberServiceImpl implements MemberService {
+	private MemberDao memberDao;
+	
+	public void setMemberDao(MemberDao memberDao) {
+		this.memberDao = memberDao;
+	}
+
+	@Override
+	public int registerMember(MemberDto memberDto) {
+		return memberDao.registerMember(memberDto);
+	}
+
+	@Override
+	public MemberDto getMember(String id) {
+		return memberDao.getMember(id);
+	}
+
+	@Override
+	public List<MemberDto> listMember() {
+		return memberDao.listMember();
+	}
+
+}
