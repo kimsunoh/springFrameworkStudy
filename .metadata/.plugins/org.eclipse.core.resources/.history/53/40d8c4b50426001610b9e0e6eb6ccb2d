@@ -1,0 +1,5 @@
+package com.kitri.aop.step02.advice;
+
+public class UserCheckAdvice {
+	
+}

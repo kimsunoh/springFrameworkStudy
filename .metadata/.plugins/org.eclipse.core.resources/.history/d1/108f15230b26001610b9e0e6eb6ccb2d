@@ -1,0 +1,7 @@
+package com.kitri.aop.step04.advice;
+
+public class ExceptionAdvice {
+	public void exceptionInfo(JoinPoint joinPoint, ){
+		
+	}
+}

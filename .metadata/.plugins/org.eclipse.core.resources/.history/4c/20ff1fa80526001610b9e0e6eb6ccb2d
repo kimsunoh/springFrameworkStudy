@@ -1,0 +1,10 @@
+package com.kitri.aop.step02.advice;
+
+import org.aopalliance.intercept.Joinpoint;
+
+public class UserCheckAdvice {
+	/*공통관심사항*/
+	public void befor(Joinpoint joinpoint){
+		
+	}
+}

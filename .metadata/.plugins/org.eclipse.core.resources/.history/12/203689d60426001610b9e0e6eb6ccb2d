@@ -1,0 +1,6 @@
+package com.kitri.aop.step02.advice;
+
+public class UserCheckAdvice {
+	/*공통관심사항*/
+	
+}
