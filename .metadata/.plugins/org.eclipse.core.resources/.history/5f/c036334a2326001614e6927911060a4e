@@ -1,0 +1,7 @@
+package com.kitri.mvc.hello;
+
+import org.springframework.web.servlet.DispatcherServlet;
+
+
+public class HelloCintroller {
+}

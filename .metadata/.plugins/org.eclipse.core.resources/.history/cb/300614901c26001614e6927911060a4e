@@ -1,0 +1,23 @@
+package com.kitri.aop.step06.advice;
+
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.annotation.Aspect;
+
+@Aspect
+public class PerformenceTraceAdvice {
+	
+	@Around(value = "")	
+	public Object trace(ProceedingJoinPoint joinPoint) throws Throwable{
+		String signature = joinPoint.getSignature().toShortString();
+		
+		long startTime = System.nanoTime();
+		try {
+			Object result = joinPoint.proceed();
+			return result;
+		} finally {
+			long endTime = System.nanoTime();
+			System.out.println(signature + "실행시간:" + (endTime - startTime) + "ns");
+		}
+	}
+}

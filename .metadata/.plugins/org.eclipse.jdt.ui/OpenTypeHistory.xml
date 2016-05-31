@@ -1,6 +1,2 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<typeInfoHistroy>
-<typeInfo handle="=AopTest/src&lt;com.kitri.aop.dao{MemberDao.java[MemberDao" modifiers="513" timestamp="1464310472139"/>
-<typeInfo handle="=AopTest/src&lt;com.kitri.aop.service{MemberService.java[MemberService" modifiers="513" timestamp="1464310515376"/>
-<typeInfo handle="=AopTest/C:\/Program Files\/Java\/jdk1.8.0_74\/jre\/lib\/rt.jar&lt;java.lang.reflect(Member.class[Member" modifiers="1537" timestamp="1458189348429"/>
-</typeInfoHistroy>
+<typeInfoHistroy/>

@@ -1,8 +1,0 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%
-	String time = (String) request.getAttribute("name");
-%>
-<font color="pink" size="30">
-	<%=time %>
-</font>
